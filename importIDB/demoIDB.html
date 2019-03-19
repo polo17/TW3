@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>IndexedDB import demo</title>
+<script type="text/javascript" src="importIDB.js"></script>
+</head>
+
+<body>
+<h1>IndexedDB import demo</h1>
+<p>How to load a file into IndexedDB, and get data from the database.</p>
+<h2>Demo</h2>
+<p>Enter the name of a fruit (apple, orange, strawberry, blueberry) to get the infos. </p>
+<p>
+<form name="form1" method="post" action="">
+  <input type="text" name="textfield" id="searchval">
+  <input type="button" value="Search" onclick="search()">
+</form>
+</p>
+<fieldset><legend>Inside database</legend>
+<div id="storage"></div>
+</fieldset>
+<script>
+
+async function loadJSON(fname) { // charge le fichier JSON
+	var response = await fetch(fname);
+	var str = await response.text();
+	var data = JSON.parse(str);
+	var idb = await importIDB("fruits", "fstore", data["fruits"]); // importe la BD
+	await displayIDB(idb, "fstore", "storage"); // montre le contenu de la BD (pour vérifier)
+}
+
+async function search() {
+	var key = document.getElementById("searchval").value;
+	var infos = await getIDB("fruits", "fstore", key); // on accède à l'enregistrement demandé dans le formulaire
+	document.getElementById("storage").innerHTML = JSON.stringify(infos, null, ' ');
+	// stringify() convertit une valeur JS en chaîne JSON
+}
+
+window.onload= loadJSON("fruits.js");
+
+</script>
+</body>
+</html>
