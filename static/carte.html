@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+  <script src="https://unpkg.com/popper.js"></script>
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script src="https://www.google.com/jsapi"></script>
+  
+  <script src="js/jquery.js"></script>
+  
+  <script>
+   $(document).ready(function() {
+	$.ajax({
+		method: "GET",
+		url: "/data",
+		//dataType: "json",
+		success: function(data) {
+			
+			var test = data[0];
+			alert(test);
+			$('body').append(test.x);
+		}
+	});
+   });
+  </script>
+
+  <head>
+
+    <title>Radars</title>
+  </head>
+
+<body>
+</body>
+
+
+</html>
