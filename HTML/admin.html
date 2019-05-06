@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<title>Administarteur</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>	
+		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="../CSS/style-admin.css">
+		
+		
+ </head>
+  <body>
+	<header>
+		
+		<h1>Bienvenue sur l'interface<br>administrateur</h1>
+	</header>
+	<section id="accueil">
+		<div id="titre-ac">
+			Ici vous êtes le boss <br> 
+		</div>
+		<div id="content-ac">
+		<i id="crown"class="fas fa-crown"></i>
+		<br>
+		
+			Vous pouvez ajouter, modifier et supprimer des radars. <br><br>
+			Exercez une de ces actions et vos modifications se passeront en temps réel ! 
+		</div>
+	</section>
+	<section>
+    <div class="cases">
+      <div class="inner">
+        <h1>Actions </h1>
+        <div class="border"></div>
+        <div class="row">
+          <div class="col">
+            <div class="case">              
+			  <button id="ajout" type="submit" class="btn btn-light" data-toggle="modal" data-target="#modal0" >Ajouter</button>
+              <p>
+                Grâce à cette action vous pouvez aisément ajouer un radar du type que vous voulez et où vous le souhaitez. Veillez à bien remplir tous les champs du formulaire.
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="case">            
+				<button id="modif" type="submit" class="btn btn-light" data-toggle="modal" data-target="#modal1" >Modifier</button>
+              <p>
+                Ici vous pouvez modifier tout radar existant, le changer de place, changer la limite de vitesse et ainsi de suite. N'oubliez pas de valider vos modifications!
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="case">             
+              <button id="suppr" type="submit" class="btn btn-light" data-toggle="modal" data-target="#modal2" >Supprimer</button>
+              <p>
+                Vous trouvez qu'un radar gâche le paysage? Ou qu'il ne vous rapporte pas assez? Ici vous pouvez supprimer le radar que vous voulez! Attention, cette action est définitive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+	
+	<div id="decodiv">
+	<br>
+	<a href="radars.html" id="deco"> Déconnexion <i class="fas fa-sign-out-alt"></i></a>
+	<br>
+	</div>
+	</section>
+	<!-- Modal pour ajouter un nouveau radar -->
+		
+		<div class="modal fade" id="modal0" tabindex="-1" role="dialog" aria-labelledby="Ajout0" aria-hidden="true">
+		  <div class="modal-dialog modal-md" role="document">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h4 class="title">
+						<i class="fa fa-plus-circle"></i>   Ajouter un radar</h4>
+						<button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+			  <div class="modal-body" >
+					<object data="Ajout.html" type="text/html" id="modalb" ></object >
+			  </div>
+			</div>
+		  </div>
+		</div>	
+		
+	<!-- Modal pour mofifier un radar -->
+		
+		<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="Ajout0" aria-hidden="true">
+		  <div class="modal-dialog modal-md" role="document">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h4 class="title">
+						<i class="fa fa-pencil-alt"></i>   Modifier un radar</h4>
+						<button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+			  <div class="modal-body" >
+					<object data="modif.html" type="text/html" id="modalc" ></object >
+			  </div>
+			</div>
+		  </div>
+		</div>		
+	<!-- Modal pour supprimer un radar -->
+		
+		<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="Ajout0" aria-hidden="true">
+		  <div class="modal-dialog modal-md" role="document">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h4 class="title">
+						<i class="fas fa-trash-alt"></i>   Supprimer un radar</h4>
+						<button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+			  <div class="modal-body" >
+					<object data="suppr.html" type="text/html" id="modald" ></object >
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+		
+  </body>
+</html>

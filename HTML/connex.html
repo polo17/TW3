@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<title>Connexion</title>
+	<link rel="stylesheet" href="../CSS/style-connex.css">
+ </head>
+  <body>
+	<script type="text/javascript">
+		
+		
+		function validate(){
+			var username = document.getElementById("user").value;
+			var password = document.getElementById("pass").value;
+			if ( (username == "admin") && (password == "radar")){
+				
+				window.location = "admin.html";
+				return false; 
+			}
+			else {
+				alert("Le nom d'utilisateur ou le mot de passe est incorrect.");
+			}
+		};
+		
+	</script>  
+	<form method="post">
+	<div class="login-box">
+	  <h1>Connexion</h1>
+	  <div class="textbox">
+		<i class="fas fa-user"></i>
+		<input type="text" name="user" id="user" placeholder="Nom d'utilisateur">
+	  </div>
+
+	  <div class="textbox">
+		<i class="fas fa-lock"></i>
+		<input type="password" name="password" id="pass" placeholder="Mot de passe">
+	  </div>
+
+	  <input type="button" class="btn" value="Se connecter" onclick="return validate()">
+	  
+	</div>
+	</form>
+	
+  </body>
+</html>
