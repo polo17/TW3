@@ -1,0 +1,25 @@
+html {
+	width:270px;
+}
+.form-control {
+	width:200px;	
+}
+form  {
+	padding-left:140px;
+}
+.btn {
+	background-color:orange;	
+	border-color:orange;
+}
+
+.btn:hover {
+	background-color:black;	
+	border-color:black;
+	color:orange;
+	margin-left:20px;
+}
+#popup {
+	top:20px;
+	width:450px;
+	z-index:2;
+}
